@@ -1,0 +1,22 @@
+{
+  "name": "seneca-docker-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "4.16.4"
+  },
+  "devDependencies": {
+    "code": "4.0.x",
+    "coveralls": "^2.11.14",
+    "eslint-config-seneca": "3.x.x",
+    "eslint-plugin-standard": "^2.0.1",
+    "lab": "11.1.x",
+    "seneca": "3.2.x"
+  }
+}
