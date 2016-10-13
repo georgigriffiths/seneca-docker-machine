@@ -133,7 +133,7 @@ module.exports = function (options) {
     cmd: 'create'
   }, create)
 
-  function create(msg, done) {
+  function create (msg, done) {
     msg.args = msg.args || {}
     var drivers = seneca.util.deepextend(options.drivers, options.types[msg.machine.type] || {}, msg.drivers || {})
     var args = {
@@ -156,7 +156,7 @@ module.exports = function (options) {
     cmd: 'create'
   }, amazonec2)
 
-  function amazonec2(msg, done) {
+  function amazonec2 (msg, done) {
     var prior = this.prior
     msg.args = msg.args || {}
     var drivers = seneca.util.deepextend(options.drivers, options.types[msg.machine.type] || {}, msg.drivers || {})
@@ -207,7 +207,7 @@ module.exports = function (options) {
   }, list)
 
   function list (msg, done) {
-    var filter = msg.filter || `${options.project}${msg.type ? '-'+msg.type : ''}.`
+    var filter = msg.filter || `${options.project}${msg.type ? '-' + msg.type : ''}.`
     seneca.flow().wait({
       role: 'unix-command',
       command: 'docker-machine ls',
@@ -322,7 +322,7 @@ module.exports = function (options) {
         role: plugin,
         cmd: 'list',
         type: process.argv[3] || null
-      })
+      }, console.log)
     }
     if (process.argv[2] === 'destroy') {
       seneca.act({
